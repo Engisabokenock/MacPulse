@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131c">
+  <title>MacPulse | Productivity Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="dashboard">
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">M</div>
+        <div>
+          <h1>MacPulse</h1>
+          <p>YOUR PERSONAL WORKSPACE</p>
+        </div>
+      </div>
+
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+        ☀️ Light mode
+      </button>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">YOUR WORKSPACE</p>
+        <h2>Stay focused. Get things done.</h2>
+        <p class="subtitle">A little progress every day adds up.</p>
+      </div>
+      <div class="date-card">
+        <span id="clock">00:00:00</span>
+        <span id="date">Loading date...</span>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span class="stat-icon">✓</span>
+        <p>Completed tasks</p>
+        <h3 id="completedCount">0</h3>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">◷</span>
+        <p>Pending tasks</p>
+        <h3 id="pendingCount">0</h3>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">⚡</span>
+        <p>Focus sessions</p>
+        <h3 id="sessionCount">0</h3>
+      </article>
+    </section>
+
+    <section class="main-grid">
+
+      <article class="panel tasks-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">ORGANIZATION</p>
+            <h2>My Tasks</h2>
+          </div>
+          <span class="live-label">● LIVE</span>
+        </div>
+
+        <form id="taskForm" class="task-form">
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="What needs to be done?"
+            maxlength="100"
+            required
+          >
+          <button type="submit">+ Add</button>
+        </form>
+
+        <div class="task-filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="pending">Pending</button>
+          <button class="filter" data-filter="completed">Completed</button>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+
+        <p id="emptyMessage" class="empty-message">
+          No tasks yet. Add your first task!
+        </p>
+      </article>
+
+      <article class="panel timer-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">TIME MANAGEMENT</p>
+            <h2>Focus Timer</h2>
+          </div>
+          <span class="timer-icon">◷</span>
+        </div>
+
+        <p id="timerMode" class="timer-mode">FOCUS SESSION</p>
+
+        <div class="timer-circle">
+          <div>
+            <span id="timerDisplay">25:00</span>
+            <p>TIME REMAINING</p>
+          </div>
+        </div>
+
+        <div class="timer-controls">
+          <button id="startTimer" class="primary-btn">▶ Start</button>
+          <button id="resetTimer" class="secondary-btn">↻ Reset</button>
+        </div>
+
+        <div class="timer-modes">
+          <button class="mode-btn active" data-minutes="25" data-mode="focus">
+            Focus 25m
+          </button>
+          <button class="mode-btn" data-minutes="5" data-mode="short">
+            Short break 5m
+          </button>
+          <button class="mode-btn" data-minutes="15" data-mode="long">
+            Long break 15m
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <p>MacPulse © 2026</p>
+      <p>Built for focus. Designed for productivity.</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
